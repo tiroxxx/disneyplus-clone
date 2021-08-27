@@ -5,38 +5,41 @@ function Header() {
     <Nav>
       <Logo src="/images/logo.svg" />
       <NavMenu>
-        <a>
+        <a href="#">
           <img src="/images/home-icon.svg" alt="" />
           <span>HOME</span>
         </a>
-        <a>
+        <a href="#">
           <img src="/images/search-icon.svg" alt="" />
           <span>SEARCH</span>
         </a>
-        <a>
+        <a href="#">
           <img src="/images/wattchlist-icon.svg" alt="" />
           <span>WATCHLIST</span>
         </a>
-        <a>
+        <a href="#">
           <img src="/images/original-icon.svg" alt="" />
           <span>ORIGINALS</span>
         </a>
-        <a>
+        <a href="#">
           <img src="/images/movie-icon.svg" alt="" />
           <span>MOVIES</span>
         </a>
-        <a>
+        <a href="#">
           <img src="/images/series-icon.svg" alt="" />
           <span>SERIES</span>
         </a>
       </NavMenu>
+      <UserImg src="/images/mickey.png" />
     </Nav>
   );
 }
 
 export default Header;
 
+// STYLES
 const Nav = styled.nav`
+  
   height: 70px;
   background: #090b13;
   display: flex;
@@ -50,19 +53,55 @@ const Logo = styled.img`
 
 const NavMenu = styled.div`
   display: flex;
+  flex: 1;
+  margin-left: 25px;
+  align-items: center;
 
   a {
     display: flex;
     align-items: center;
     padding: 0 12px;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
 
     img {
-        height: 20px;
+      height: 20px;
     }
 
     span {
-        font-size: 13px;
-        letter-spacing: 1.42px;
+      position: relative;
+      font-size: 13px;
+      letter-spacing: 1.42px;
+
+      &:after {
+        content: '';
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: all 0.25s ease-out;
+      }
+    }
+
+    &:hover {
+      span:after {
+        transform: scaleX(1);
+        opacity: 1;
+      }
     }
   }
+`;
+
+const UserImg = styled.img`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
 `;
