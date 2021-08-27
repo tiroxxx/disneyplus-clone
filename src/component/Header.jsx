@@ -9,6 +9,26 @@ function Header() {
           <img src="/images/home-icon.svg" alt="" />
           <span>HOME</span>
         </a>
+        <a>
+          <img src="/images/search-icon.svg" alt="" />
+          <span>SEARCH</span>
+        </a>
+        <a>
+          <img src="/images/wattchlist-icon.svg" alt="" />
+          <span>WATCHLIST</span>
+        </a>
+        <a>
+          <img src="/images/original-icon.svg" alt="" />
+          <span>ORIGINALS</span>
+        </a>
+        <a>
+          <img src="/images/movie-icon.svg" alt="" />
+          <span>MOVIES</span>
+        </a>
+        <a>
+          <img src="/images/series-icon.svg" alt="" />
+          <span>SERIES</span>
+        </a>
       </NavMenu>
     </Nav>
   );
@@ -38,6 +58,11 @@ const NavMenu = styled.div`
 
     img {
         height: 20px;
+    }
+
+    span {
+        font-size: 13px;
+        letter-spacing: 1.42px;
     }
   }
 `;
