@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import ImageSlider from './ImageSlider';
+import Categories from './Categories';
 
 function Home() {
   return (
     <Container>
       <ImageSlider />
+      <Categories />
     </Container>
   );
 }
@@ -12,6 +14,7 @@ function Home() {
 export default Home;
 
 const Container = styled.main`
+  overflow-x: hidden;
   position: relative;
   min-height: calc(100vh - 70px);
   padding: 0 calc(3.5vw + 5px);
