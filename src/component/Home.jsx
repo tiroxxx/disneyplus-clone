@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import ImageSlider from './ImageSlider';
 import Categories from './Categories';
+import Movies from './Movies';
 
 function Home() {
   return (
     <Container>
       <ImageSlider />
       <Categories />
+      <Movies />
     </Container>
   );
 }
