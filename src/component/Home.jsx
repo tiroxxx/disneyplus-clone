@@ -11,12 +11,13 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // db.collection('movies').onSnapshot((snapshot) => {
-    //   const tempMovies = snapshot.docs.map((doc) => {
-    //     return { id: doc.id, ...doc.data() };
-    //   });
-    //   dispatch(setMovies(tempMovies));
-    // });
+    db.collection('movies').onSnapshot((snapshot) => {
+      const tempMovies = snapshot.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+
+      dispatch(setMovies(tempMovies));
+    });
   });
 
   return (
