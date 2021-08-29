@@ -3,11 +3,17 @@ import styled from 'styled-components';
 import ImageSlider from './ImageSlider';
 import Categories from './Categories';
 import Movies from './Movies';
+import db from '../firebase';
 
 function Home() {
+  useEffect(() => {
+    db.collection('movies').onSnapshot((snapshot) => {
+      const tempMovies = snapshot.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+    });
+  });
 
-
-  
   return (
     <Container>
       <ImageSlider />
