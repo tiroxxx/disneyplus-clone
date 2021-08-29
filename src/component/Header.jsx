@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 function Header() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <Nav>
       <Logo src="/images/logo.svg" />
@@ -30,7 +33,7 @@ function Header() {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <UserImg src="/images/mickey.png" />
+      {loggedIn ? <UserImg src="/images/mickey.png" /> : <Login>LOGIN</Login>}
     </Nav>
   );
 }
@@ -104,4 +107,19 @@ const UserImg = styled.img`
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
+`;
+
+const Login = styled.div`
+  border: 1px solid #f9f9f9;
+  padding: 8px 16px;
+  border-radius: 4px;
+  letter-spacing: 1.5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.25s ease-out;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    border-color: transparent;
+  }
 `;
