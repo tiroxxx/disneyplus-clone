@@ -4,14 +4,19 @@ import ImageSlider from './ImageSlider';
 import Categories from './Categories';
 import Movies from './Movies';
 import db from '../firebase';
+import { useDispatch } from 'react-redux';
+import { setMovies } from '../features/movie/movieSlice';
 
 function Home() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    db.collection('movies').onSnapshot((snapshot) => {
-      const tempMovies = snapshot.docs.map((doc) => {
-        return { id: doc.id, ...doc.data() };
-      });
-    });
+    // db.collection('movies').onSnapshot((snapshot) => {
+    //   const tempMovies = snapshot.docs.map((doc) => {
+    //     return { id: doc.id, ...doc.data() };
+    //   });
+    //   dispatch(setMovies(tempMovies));
+    // });
   });
 
   return (
