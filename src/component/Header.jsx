@@ -63,6 +63,10 @@ const Nav = styled.nav`
   align-items: center;
   padding: 0 36px;
   overflow-x: hidden;
+
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+  }
 `;
 
 const Logo = styled.img`
@@ -74,6 +78,10 @@ const NavMenu = styled.div`
   flex: 1;
   margin-left: 25px;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 
   a {
     display: flex;

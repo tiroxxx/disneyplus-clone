@@ -31,7 +31,7 @@ const Container = styled.div`
   grid-gap: 25px;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-gap: 5px;
   }
 `;

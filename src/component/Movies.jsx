@@ -37,7 +37,7 @@ const Content = styled.div`
   grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow-x: scroll;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-gap: 5px;
   }
 `;
