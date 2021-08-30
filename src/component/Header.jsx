@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { selectLogin } from '../features/login/loginSlice';
-
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Header() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const loggedIn = useSelector(selectLogin);
+  console.log(loggedIn);
 
   return (
     <Nav>
@@ -35,7 +36,13 @@ function Header() {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      {loggedIn ? <UserImg src="/images/mickey.png" /> : <Login>LOGIN</Login>}
+      {loggedIn ? (
+        <UserImg src="/images/mickey.png" />
+      ) : (
+        <StyledLink to ="/login">
+          <Login>LOGIN</Login>
+        </StyledLink>
+      )}
     </Nav>
   );
 }
@@ -125,3 +132,8 @@ const Login = styled.div`
     border-color: transparent;
   }
 `;
+
+const StyledLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+`
