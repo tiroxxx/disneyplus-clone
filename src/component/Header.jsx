@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 function Header() {
   const dispatch = useDispatch();
   const loggedIn = useSelector(selectLogin);
-  console.log(loggedIn);
 
   function handleLogout() {
     dispatch(setLogout());
@@ -27,7 +26,7 @@ function Header() {
           <span>SEARCH</span>
         </Link>
         <Link to="/">
-          <img src="/images/wattchlist-icon.svg" alt="" />
+          <img src="/images/watchlist-icon.svg" alt="" />
           <span>WATCHLIST</span>
         </Link>
         <Link to="/">

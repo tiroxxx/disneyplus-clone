@@ -25,12 +25,21 @@ function Movies() {
 
 export default Movies;
 
-const Container = styled.div``;
+const Container = styled.div`
+  h4 {
+    margin-bottom: 10px;
+  }
+`;
 
 const Content = styled.div`
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow-x: scroll;
+
+  @media (max-width: 768px) {
+    grid-gap: 5px;
+  }
 `;
 
 const Wrap = styled.div`
