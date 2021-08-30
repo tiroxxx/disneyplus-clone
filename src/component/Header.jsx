@@ -2,44 +2,51 @@ import styled from 'styled-components';
 import { selectLogin } from '../features/login/loginSlice';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setLogout } from '../features/login/loginSlice';
+import { useDispatch } from 'react-redux';
 
 function Header() {
+  const dispatch = useDispatch();
   const loggedIn = useSelector(selectLogin);
   console.log(loggedIn);
+
+  function handleLogout() {
+    dispatch(setLogout());
+  }
 
   return (
     <Nav>
       <Logo src="/images/logo.svg" />
       <NavMenu>
-        <a href="#home">
+        <Link to="/">
           <img src="/images/home-icon.svg" alt="" />
           <span>HOME</span>
-        </a>
-        <a href="#search">
+        </Link>
+        <Link to="/">
           <img src="/images/search-icon.svg" alt="" />
           <span>SEARCH</span>
-        </a>
-        <a href="#watchlist">
+        </Link>
+        <Link to="/">
           <img src="/images/wattchlist-icon.svg" alt="" />
           <span>WATCHLIST</span>
-        </a>
-        <a href="#originals">
+        </Link>
+        <Link to="/">
           <img src="/images/original-icon.svg" alt="" />
           <span>ORIGINALS</span>
-        </a>
-        <a href="#movies">
+        </Link>
+        <Link to="/">
           <img src="/images/movie-icon.svg" alt="" />
           <span>MOVIES</span>
-        </a>
-        <a href="#series">
+        </Link>
+        <Link to="/">
           <img src="/images/series-icon.svg" alt="" />
           <span>SERIES</span>
-        </a>
+        </Link>
       </NavMenu>
       {loggedIn ? (
-        <UserImg src="/images/mickey.png" />
+        <UserImg onClick={handleLogout} src="/images/mickey.png" />
       ) : (
-        <StyledLink to ="/login">
+        <StyledLink to="/login">
           <Login>LOGIN</Login>
         </StyledLink>
       )}
@@ -136,4 +143,4 @@ const Login = styled.div`
 const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: none;
-`
+`;

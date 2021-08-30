@@ -1,11 +1,22 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { setLogin } from '../features/login/loginSlice';
+import { useDispatch } from 'react-redux';
 
 function Login() {
+  const dispatch = useDispatch();
+
+  function handleLogout() {
+    dispatch(setLogin());
+  }
+
   return (
     <Container>
       <Content>
         <LogoOne src="/images/cta-logo-one.svg" />
-        <SignUp>GET ALL THERE</SignUp>
+        <StyledLink onClick={handleLogout} to="/">
+          GET ALL THERE
+        </StyledLink>
         <Description>
           Get Premier Access to Raya and the Last Dragon for an additional fee
           with a Disney+ subscription. As of 03/26/21, the price of Disney+ and
@@ -53,7 +64,8 @@ const Content = styled.div`
 
 const LogoOne = styled.img``;
 
-const SignUp = styled.a`
+const StyledLink = styled(Link)`
+  text-decoration: none;
   width: 100%;
   background-color: #0063e5;
   font-weight: bold;
