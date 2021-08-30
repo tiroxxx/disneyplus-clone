@@ -18,7 +18,7 @@ function Detail() {
           // redirect
         }
       });
-  }, []);
+  }, [id]);
 
   return (
     <Container>
