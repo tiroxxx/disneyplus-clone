@@ -21,6 +21,12 @@ function ImageSlider() {
       <Wrap>
         <img src="/images/slider-badag.jpg" alt="" />
       </Wrap>
+      <Wrap>
+        <img src="/images/slider-scale.jpg" alt="" />
+      </Wrap>
+      <Wrap>
+        <img src="/images/slider-scales.jpg" alt="" />
+      </Wrap>
     </Carousel>
   );
 }
@@ -32,6 +38,13 @@ const Carousel = styled(Slider)`
 
   button {
     z-index: 1;
+  }
+
+  .slick-prev {
+    left: -1%
+  }
+  .slick-next {
+    right: -1%
   }
 
   ul li button {

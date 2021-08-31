@@ -79,7 +79,7 @@ const NavMenu = styled.div`
   margin-left: 25px;
   align-items: center;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 900px) {
     display: none;
   }
 
