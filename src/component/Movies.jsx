@@ -27,8 +27,6 @@ function Movies({ title, type }) {
 export default Movies;
 
 const Container = styled.div`
-  margin-bottom: 20px;
-  overflow: hidden;
 
   &::-webkit-scrollbar {
     display: none;
@@ -36,12 +34,10 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  overflow: hidden;
-  padding: 20px;
+  padding: 10px 20px 50px 20px;
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  overflow-x: scroll;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -51,7 +47,6 @@ const Content = styled.div`
 const Wrap = styled.div`
   border-radius: 10px;
   cursor: pointer;
-  overflow: hidden;
   border: 3px solid rgba(249, 249, 249, 0.1);
   box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px,
     rgb(0 0 0 / 73%) 0 16px 10px -10px;
