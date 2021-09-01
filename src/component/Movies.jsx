@@ -3,15 +3,16 @@ import { selectMovies } from '../features/movie/movieSlice';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function Movies() {
+function Movies({ title, type }) {
   const movies = useSelector(selectMovies);
+  const filteredMovies = movies.filter((movie) => movie.type == type);
 
   return (
     <Container>
-      <h4>Recommended for You</h4>
+      <h4>{title}</h4>
       <Content>
         {movies &&
-          movies.map((movie, idx) => (
+          filteredMovies.map((movie, idx) => (
             <Wrap key={idx}>
               <Link to={`/detail/${movie.id}`}>
                 <img src={movie.cardImg} alt="" />
@@ -26,19 +27,24 @@ function Movies() {
 export default Movies;
 
 const Container = styled.div`
-  h4 {
-    margin-bottom: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;
 
 const Content = styled.div`
+  overflow: hidden;
+  padding: 20px;
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow-x: scroll;
 
   @media (max-width: 1024px) {
-    grid-gap: 5px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
 

@@ -24,7 +24,10 @@ function Home() {
     <Container>
       <ImageSlider />
       <Categories />
-      <Movies />
+      <Movies title="Recommended for You" type="recommend"/>
+      <Movies title="New to Disney+" type="new"/>
+      <Movies title="Originals" type="original"/>
+      <Movies title="Trending" type="trending"/>
     </Container>
   );
 }
