@@ -34,7 +34,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 10px 20px 50px 20px;
+  padding: 10px 0 50px 0;
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -53,6 +53,7 @@ const Wrap = styled.div`
   transition: all 0.25s ease-out;
 
   img {
+    border-radius: 10px;
     width: 100%;
     height: 100%;
     object-fit: cover;
